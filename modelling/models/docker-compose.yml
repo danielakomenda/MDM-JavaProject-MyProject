@@ -1,0 +1,12 @@
+services:
+   web-service:
+     depends_on:
+       - model-service
+     image: komendan/mdm-java-project:latest
+     ports:
+       - "80:8082"
+     restart: always
+
+   model-service:
+     image: komendan/model-service:latest
+     restart: always
